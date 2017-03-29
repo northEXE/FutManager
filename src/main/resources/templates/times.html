@@ -38,7 +38,7 @@
 		
 		<div class="row">
 			<h5>Times Cadastrados</h5>
-			<table class="stripped">
+			<table class="striped">
 				<thead>
 					<tr>
 						<th>Nome</th>
@@ -51,7 +51,7 @@
 					<tr>
 						<td>Time 01</td>
 						<td>04</td>
-						<td><a class="waves-effect waves-teal btn-flat" href="#">Ver detalhes</a></td>
+						<td><a class="waves-effect waves-teal btn-flat" th:href="@{'/times/'+${id}}">Ver detalhes</a></td>
 						<td><a class="waves-effect waves-teal btn-flat" href="#">X</a></td>
 					</tr>	
 				</tbody>
