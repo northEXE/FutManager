@@ -25,13 +25,13 @@
 		</div>
 
 		<div class="row">
-			<form>
+			<form action="/jogadores/salvar" method="POST">
 				<div class="input-field col s4">
-					<input placeholder="Nome do Jogador" id="nome" type="text"
+					<input placeholder="Nome do Jogador" id="nome" name="nomeJogador" type="text"
 						class="validate"/> <label for="nome">Nome do Jogador</label>
 				</div>
 				<div class="input-field col s4">
-					<input placeholder="Nome do jogador" id="nome" type="text" class="validate"/>
+					<input placeholder="Nome do jogador" id="idade" name="idadeJogador" type="text" class="validate"/>
 					<label for="idade">Idade</label>
 				</div>
 				<div class="col s4">
@@ -52,10 +52,13 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>Frodo Bolseiro</td>
-						<td>Teta Futebol Clube</td>
-						<td><a class="waves-effect waves-teal btn-flat" href="#">X</a></td>
+					<tr th:each="jogador : ${jogadores}">
+						<td th:text="${jogador.nome}"></td>
+						
+						<td th:if="${jogador.time}" th:text="${jogador.time.nome}"></td>
+						<td th:unless="${jogador.time}">Sem time</td>
+						
+						<td><a class="waves-effect waves-teal btn-flat" th:href="@{${'/jogadores/excluir/'}+jogador.id}">X</a></td>
 					</tr>
 				</tbody>
 			</table>
