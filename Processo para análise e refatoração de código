@@ -1,0 +1,6 @@
+Processo para análise e refatoração de código
+1 - Detectar code clones e code smells;
+2 - Analisar a métrica de manutenabilidade;
+3 - Refatorar o código;
+4 - Reanalisar a métrica de manutenabilidade;
+5 - analisar se os code smells e os code clones foram resolvidos
